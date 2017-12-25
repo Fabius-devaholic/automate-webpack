@@ -1,14 +1,13 @@
 var path = require('path');
-var webpack = require('webpack');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 
 module.exports = {
-  watch: true,
   entry: ['./src/scss/styles.scss', './src/js/scripts.js'],
   output: {
-    path: path.resolve(__dirname, 'built'),
-    filename: 'js/scripts.js'
+    path: path.resolve(__dirname, 'dist'),
+    filename: 'js/scripts.js',
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -34,10 +33,11 @@ module.exports = {
     new ExtractTextPlugin({ // define where to save the file
       filename: 'css/styles.css',
       allChunks: true,
-    }),
+    })
   ],
   stats: {
     colors: true
   },
-  devtool: 'source-map'
+  devtool: 'source-map',
+  watch: true
 };
