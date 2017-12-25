@@ -1,5 +1,6 @@
 var path = require('path');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
+var CopyWebpackPlugin = require('copy-webpack-plugin');
 
 
 module.exports = {
@@ -33,6 +34,18 @@ module.exports = {
     new ExtractTextPlugin({ // define where to save the file
       filename: 'css/styles.css',
       allChunks: true,
+    }),
+    new CopyWebpackPlugin([
+      {
+        from: './src/imgs',
+        to: 'imgs'
+      },
+      {
+        from: './src/fonts',
+        to: 'fonts'
+      }
+    ], {
+      copyUnmodified: true
     })
   ],
   stats: {
