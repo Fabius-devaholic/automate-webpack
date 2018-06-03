@@ -114,5 +114,8 @@ module.exports = {
       'Access-Control-Allow-Origin': '*'
     }
   },
+  stats: {
+    colors: true
+  },
   devtool: 'source-map'
 }
