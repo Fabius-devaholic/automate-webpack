@@ -1,0 +1,11 @@
+.container {
+  display: grid;
+  align-content: stretch;
+  grid-auto-flow: row;
+  grid-template-columns: repeat(12, 1fr);
+
+  @include respond-to('lg') {
+    margin: 0 auto;
+    max-width: $max-width;
+  }
+}

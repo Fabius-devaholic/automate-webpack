@@ -1,0 +1,9 @@
+.color-- {
+  &white {
+    color: get-color('white');
+  }
+
+  &black {
+    color: get-color('black');
+  }
+}

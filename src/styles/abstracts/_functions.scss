@@ -1,0 +1,14 @@
+/// Get colors manager
+/// @access public
+/// @param {String} $color - Color
+/// @requires $colors
+@function get-color($color) {
+  $raw-query: map-get($colors, $color);
+
+  @if not $raw-query {
+    @error 'No value found for `#{$color}`. '
+      + 'Please make sure it is defined in `$colors` map.';
+  }
+
+  @return map-get($colors, $color);
+}
